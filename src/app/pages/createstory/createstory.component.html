@@ -1,0 +1,125 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+
+<div class="story-form">
+  <div class="headings">
+    <h2 style="font-family: 'Inter'; font-style: italic; color: #faf0e6">
+      Bring that twist in your story.
+    </h2>
+    <h3 style="font-family: 'Merriweather'; color: #faf0e6">
+      Let everyone add into it.
+    </h3>
+  </div>
+  <div class="sides">
+    <div class="left-side">
+      <mat-form-field class="from-field">
+        <mat-label>Please Enter a title</mat-label>
+        <input matInput [(ngModel)]="title" name="title" />
+      </mat-form-field>
+
+      <mat-form-field class="from-field">
+        <mat-label>Please enter a brief prompt</mat-label>
+        <textarea
+          matInput
+          rows="10"
+          cols="20"
+          [(ngModel)]="prompt"
+          name="prompt"
+        ></textarea>
+      </mat-form-field>
+    </div>
+    <div class="right-side">
+      <mat-form-field class="from-field">
+        <mat-label>Please enter first paragraph of the story </mat-label>
+        <textarea
+          matInput
+          rows="13"
+          cols="20"
+          [(ngModel)]="story"
+          name="story"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div>
+    <!-- toggle for private of public -->
+    <div class="privacy-toggle">
+      <span class="toggle-label" (click)="onPrivacyChange(false)">Public</span>
+      <label class="switch">
+        <input
+          type="checkbox"
+          [(ngModel)]="isPrivate"
+          (change)="onPrivacyChange(isPrivate)"
+        />
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Private</span>
+    </div>
+
+    <!-- toggle personal or group -->
+    <div class="privacy-toggle" *ngIf="isPrivate">
+      <span class="toggle-label">Personal</span>
+      <label class="switch">
+        <input
+          type="checkbox"
+          (change)="onGroupChange(isGroup)"
+          [(ngModel)]="isGroup"
+        />
+
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Group</span>
+    </div>
+  </div>
+
+  <!-- Group wala feature -->
+  <div *ngIf="isPrivate && isGroup">
+    <form [formGroup]="usernamesForm">
+      <div formArrayName="usernames">
+        <span
+          class="add"
+          *ngFor="let username of usernames.controls; let i = index"
+        >
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              placeholder="Mr Story"
+              value="Username"
+              [formControlName]="i"
+            />
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            color="primary"
+            class="removebtn"
+            (click)="removeUsernameField(i)"
+          >
+            Remove
+          </button>
+        </span>
+      </div>
+      <button
+        mat-icon-button
+        aria-label="Example icon button with a vertical three dot icon"
+        (click)="addUsernameField()"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </form>
+    <span>{{ userarray_error }}</span>
+  </div>
+  <mat-spinner *ngIf="playspinner"></mat-spinner>
+  <button
+    class="submit"
+    (click)="submitStory()"
+    mat-flat-button
+    color="primary"
+  >
+    Submit
+  </button>
+</div>

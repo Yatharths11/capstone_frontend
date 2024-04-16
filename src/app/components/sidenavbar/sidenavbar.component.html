@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<mat-drawer-container class="example-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over">
+    <div class="upper-buttons">
+      <button mat-button>
+        <span class="material-symbols-outlined" (click)="drawer.toggle()">arrow_back</span>
+      </button>
+      <br>
+      <button mat-button>Explore</button>
+      <button mat-button>My Contributions</button>
+      <button mat-button>Profile</button>
+    </div>
+
+    <div class="lower-buttons">
+      <button mat-button >Log out</button>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button (click)="drawer.toggle()" mat-button class="menu"><span class="material-symbols-outlined">menu</span></button>
+  </mat-drawer-content>
+</mat-drawer-container>

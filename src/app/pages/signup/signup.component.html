@@ -1,0 +1,59 @@
+<div class="example-container">
+  <button mat-raised-button [routerLink]="['/home']" class="home">Home</button>
+  <div class="center">
+    <div class="top">
+      <h1>BEGIN YOUR WRITING</h1>
+      <h1>JOURNEY</h1>
+    </div>
+
+    <!-- Username -->
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="username" />
+      <span *ngIf="usernamerror">{{ usernamerror }}</span>
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" />
+      <span *ngIf="emailError">{{ emailError }}</span>
+    </mat-form-field>
+
+    <!-- Password -->
+    <mat-form-field>
+      <mat-label>Enter your password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        [(ngModel)]="password"
+      />
+      <p>{{ passworderror }}</p>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- To redirect to login page -->
+    <p style="font-size: 10px">
+      Have an account already?<a
+        style="color: white"
+        href=""
+        [routerLink]="['/login']"
+        >Login</a
+      >
+    </p>
+
+    <!-- Submit Button -->
+    <button (click)="register()" mat-flat-button>Register</button>
+  </div>
+  <div class="image">
+    <img src="../../../assets/img1.jpg" alt="" />
+  </div>
+</div>

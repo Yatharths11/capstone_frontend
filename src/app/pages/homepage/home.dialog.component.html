@@ -1,0 +1,33 @@
+<style>
+  .profile-icon {
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    font-size: 100px;
+  }
+
+  .profile{
+    margin: 20px;
+    color: white;
+  }
+</style>
+
+<div class="profile">
+  <h1>Hi Username</h1>
+
+  <div>
+    <div class="material-symbols-outlined profile-icon">person</div>
+  </div>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Enter your new password" value="user@error.com" />
+  </mat-form-field>
+
+  <p (click)="changepassword()">Change password ?</p>
+
+  <mat-form-field class="example-full-width" *ngIf="changepasswrd">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Ente your new password" value="" />
+  </mat-form-field>
+</div>

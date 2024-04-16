@@ -1,0 +1,43 @@
+.example-container {
+  background-color: #352F44;
+  width: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.home {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  margin: 10px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.image {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  width: calc(100vw - 638px);
+  mask-image: url('../../../assets/img1.jpg');
+  overflow: hidden;
+  overflow-y: hidden;
+
+}

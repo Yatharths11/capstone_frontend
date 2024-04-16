@@ -1,0 +1,43 @@
+/* @import "primeicons/primeicons.css"; */
+@import "../../../../node_modules/primeicons/primeicons.css";
+*{
+    font-family: 'Lato';
+}
+.story-container{
+    width: 60vw; 
+    display: flex;
+    align-items: flex-start;
+    justify-content:flex-start;
+    flex-direction: row;
+    height: 8%;
+    background-color: #FAF0E6;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px 16vw;
+    border:0px solid #5C5470;
+    /* box-shadow: 
+    5px 5px 5px #352f4448,  
+    -5px 5px 5px #352f4452; */
+    color: black;
+}
+.text{
+    width: 100%;
+}
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+p{
+    direction: rtl;
+}
+.engagements{
+    /* margin: 0px 13px; */
+    width: 5vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.material-symbols-outlined:hover{
+    cursor:default;
+}

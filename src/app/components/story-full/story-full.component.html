@@ -1,0 +1,62 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Bentham&family=Dancing+Script:wght@400..700&family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+  rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<div class="main" (storyId)="getId($event)">
+  <div class="page">
+    <div class="story">
+      <div class="content">
+        <h1 style="font-family: 'Roboto Condensed'; font-style: italic">
+          {{ title }}
+        </h1>
+        <p class="prompt" style="font-family: 'Merriweather'">
+          {{ description }}
+        </p>
+        <hr />
+
+        <div *ngFor="let element of content">
+          <p style="font-family: EB Garamond; margin:0px">{{ element.text }}</p>
+          <h6>Written by: Author Name</h6>
+          <hr>
+        </div>
+      </div>
+
+      <!-- Textbox -->
+      <div class="writer">
+        <mat-form-field class="textarea" hintLabel="Max 100 characters">
+          <mat-label>Enter some input..</mat-label>
+          <textarea
+            rows="10"
+            matInput
+            [(ngModel)]="userInput"
+            maxlength="500"
+            placeholder="Ex. Nougat"
+          ></textarea>
+          <mat-hint align="end">{{ userInput.length }}/500</mat-hint>
+        </mat-form-field>
+        <button class="add" (click)="onAddClick()" [disabled]="!canClick">
+          Add
+        </button>
+        <span>
+          {{ additionerror }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

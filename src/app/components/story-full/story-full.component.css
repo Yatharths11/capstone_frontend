@@ -1,0 +1,94 @@
+.main {
+    height: calc(100% - 40px) or;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: black;
+
+}
+
+.page {
+    width: 60vw;
+    height: 70%;
+    /* background-color: #B9B4C7; */
+    border-radius: 20px;
+
+}
+h6{
+    height: 8px;
+    direction: rtl;;
+}
+.story {
+    background-color: #FAF0E6;
+    height: 90vh;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.story h1 {
+    margin-bottom: 20px;
+
+}
+
+.content {
+    height: 300px;
+    overflow: scroll;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* Hide default scrollbar (Chrome & Safari) */
+    -ms-overflow-style: none;
+}
+
+.prompt {
+    /* margin: 10px; */
+    color: black;
+
+}
+
+.text {
+    /* margin: 5px; */
+    color: black;
+
+}
+
+.textarea {
+    width: 100%;
+    height: 200px;
+    outline: 0px;
+    color: white;
+    border: 1px solid rgb(250, 220, 160);
+}
+
+.writer {
+    margin: 15px;
+}
+
+.add {
+    background-color: #5C5470;
+    color: white;
+    height: 50p;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s ease all;
+    direction: rtl;
+}
+
+.add {
+    direction: rtl;
+    height: 30px;
+    width: 100px;
+}
+
+.add a {
+    font-size: 20px;
+}
+
+mat-hint,
+mat-form-field::before {
+    color: black;
+}

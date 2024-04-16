@@ -1,0 +1,71 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+
+<mat-drawer-container class="example-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over">
+    <div class="upper-buttons">
+      <button mat-button>
+        <span class="material-symbols-outlined" (click)="drawer.toggle()"
+          >arrow_back</span
+        >
+      </button>
+      <br />
+      <button mat-button [routerLink]="['/home']">Explore</button>
+      <button mat-button>My Contributions</button>
+      <button mat-button [routerLink]="['/private']">My Private Group</button>
+      <!-- <button mat-raised-button (click)="openDialog()">Profile</button> -->
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="header">
+      <button (click)="drawer.toggle()" mat-button class="menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <span class="buttons">
+        <button
+          [routerLink]="['/login']"
+          *ngIf="!isAuthTokenPresent()"
+          mat-raised-button
+        >
+          Sign In
+        </button>
+        <button
+          [routerLink]="['/signup']"
+          *ngIf="!isAuthTokenPresent()"
+          mat-raised-button
+        >
+          Sign Up
+        </button>
+
+        <span class="example-button-container">
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Example icon button with a filter list icon"
+            [routerLink]="['/create']"
+          >
+            <mat-icon fontIcon="add"></mat-icon>
+          </button>
+        </span>
+        <button
+          (click)="logout()"
+          *ngIf="isAuthTokenPresent()"
+          mat-raised-button
+        >
+          Log Out
+        </button>
+      </span>
+    </div>
+    <div class="streak">
+      <span><h3>Current Streak {{ current_streak }}</h3></span>
+      <span class="circle"> {{ current_streak }} </span>
+      <span><h3>Longest Streak {{ longest_streak }}</h3></span>
+    </div>
+
+    <div class="main" *ngFor="let story of stories">
+      <app-story-min [story]="story"></app-story-min>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

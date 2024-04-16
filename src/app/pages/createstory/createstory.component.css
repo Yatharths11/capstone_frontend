@@ -1,0 +1,160 @@
+.story-form {
+  background-color: #352F44;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: max-content;
+  width: 100vw;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.from-field {
+  width: 80%;
+}
+
+.headings {
+  color: #FAF0E6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2,
+h3 {
+  margin: 10px;
+}
+
+.submit {
+  justify-content: end;
+}
+
+.sides {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.left-side {
+  width: 45vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right-side {
+  width: 45vw;
+  height: 94%;
+}
+
+
+.privacy-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 4px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FAF0E6;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #FAF0E6;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #352F44;
+  border: #FAF0E6 solid 1px;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+span {
+  color: #FAF0E6;
+}
+
+/* /////////// */
+/* Style the form container */
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Style the form fields */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the buttons */
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+.add {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  width: 35vw;
+}
+
+.example-full-width {
+  width: 75%;
+}
+
+.removebtn {
+  margin: 7.5px 0px;
+}

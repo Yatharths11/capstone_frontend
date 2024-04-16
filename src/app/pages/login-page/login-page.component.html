@@ -1,0 +1,37 @@
+
+<div class="example-container">
+  <button mat-raised-button [routerLink]="['/home']" class="home">Home</button>
+  <div class="center">
+    <h1>WELCOME BACK</h1>
+
+    <!-- Username -->
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="username">
+    </mat-form-field>
+
+    <!-- Password -->
+    <mat-form-field>
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+      <p>{{passworderror}}</p>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- Redirect to register  -->
+    <h2 style="font-size: 15px">Don't have an account?<a style="color: white;" href="/signup">Register</a></h2>
+    <button (click)="getDetails()" (click)="performLogin()" mat-flat-button>Submit</button>
+
+    <div class="image">
+      <img src="../../../assets/img1.jpg" alt="" />
+    </div>
+  </div>
+</div>

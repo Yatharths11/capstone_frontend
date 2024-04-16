@@ -1,0 +1,48 @@
+.example-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: #352F44;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-drawer {
+  width: 200px;
+  display: flex;
+  direction: ltr;
+  background-color: #352F44;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+button {
+  margin: 10px;
+}
+
+.menu {
+  background-color: #352F44;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  width: 100%;
+  height: max-content;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
